@@ -1,0 +1,32 @@
+model_name_or_path: Qwen/Qwen2.5-7B-Instruct
+adapter_name_or_path: <path/to/trained/adapter>/Qwen2.5-7B/lora/sft
+template: qwen
+infer_backend: huggingface # choices: [huggingface, vllm]
+trust_remote_code: true
+
+### method
+stage: sft
+do_train: false
+finetuning_type: lora
+do_predict: true
+
+### dataset
+eval_dataset: synbltl_test
+dataset_dir: <path/to/dataset>
+cutoff_len: 2048
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### output
+per_device_eval_batch_size: 8
+overwrite_output_dir: true
+predict_with_generate: true
+output_dir: <path/to/output>/Qwen2.5-7B/lora/predict/syn
+
+do_sample: false
+temperature: 0.0
+top_p: 1.0
+top_k: 0
+num_beams: 1
+repetition_penalty: 1.0
+max_new_tokens: 500

@@ -1,0 +1,23 @@
+# Generated data (regenerate with data_creation/prepare_syn_data.sh)
+data/generated/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Logs and outputs
+logs/
+temp/
+*.log
+
+# Env / secrets
+.env
+
+# Editor / OS
+.DS_Store
+~$*
+.idea/
+.vscode/
